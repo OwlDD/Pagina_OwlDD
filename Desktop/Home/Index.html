@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Login</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+
+
+<body>
+
+    <div class="login-container">
+        <img class="avatar" src="img/imgicon.png" alt="Icono">
+        <h1 class="text">O w l - D D</h1>
+     
+        <a href="img" target="_blank">
+          <span id="span1"></span>
+          <span id="span2"></span>
+          <span id="span3"></span>
+          <span id="span4"></span>
+          <img class="git" src="img/github.png" alt="img"></a><br>
+     
+        <h3 class="text1">Echa un vistazo a nuestros proyectos de Git</h3>
+        <p class="text12">Damos mantenimiento y creación de la paginas webs. Ademas contamos con el servicio de diseño</p><p class="text12">Contactanos, solo da click en cualquiera de los iconos y puedes jugar aqui abajo :)</p>
+     
+        <a href="#"target="_blank"><img class="icon" src="img/linkedin.png" alt="img"></a>
+        <a href="https://www.instagram.com/owldd93" target="_blank"><img class="icon1" src="img/instagram.png" alt="instagram"></a>     
+        <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/button" target="_blank"><img class="icon2" src="img/wats.png" alt="img"></a>
+
+        <p class="text2">Correo: owldd93@gmail.com</p>
+      
+    </div>
+
+
+
+
+
+
+
+
+    <!--GAME-->
+    <div id="app">
+        <transition v-on:enter="enter" v-bind:css="false" appear>
+          <div class="butter-cheese-eggs" v-show="true">
+            <div v-for="(block, index) in grid" @click="select(index)">
+              <block :figure.sync="block.figure" />
+            </div>
+          </div>
+        </transition>
+        
+        <transition v-on:enter="enterWin" v-bind:css="false">
+          <win v-show="winner" :click-handler="restart"></win>
+        </transition>
+      </div>
+      
+      <template id="block">
+        <div class="block">
+          <transition v-on:enter="enter" v-bind:css="false">
+            <span v-show="figure > -1">{{ fig }}</span>
+          </transition>
+        </div>
+      </template>
+      
+      <template id="win">
+        <div class="win">
+          <h2>Genial</h2>
+          <button @click="clickHandler">Play again</button>
+        </div>
+      </template>
+      
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.15.0/lodash.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script><script  src="./script.js"></script>
+      
+    
+    
+</body>
+</html>
